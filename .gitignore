@@ -1,5 +1,26 @@
-/dw/raw/in.xlsx
-/dw/raw/RELAÇÃO DE FORNECEDORES.xls
-/dw/bronze/plano_contas.csv
-/dw/bronze/transacoes.csv
-/dw
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environments (Virtualenvs)
+.env
+.venv
+env/
+venv/
+
+# IDEs/Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs e Bancos de dados
+*.log
+db.sqlite3
+
+# Dados 
+dw

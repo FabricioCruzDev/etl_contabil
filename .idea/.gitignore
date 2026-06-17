@@ -2,5 +2,9 @@
 /shelf/
 /workspace.xml
 
+# Environment
+/env/
+
+
 # Dados sensíveis
 /dw/

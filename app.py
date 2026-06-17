@@ -4,13 +4,16 @@ from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-from conn import con
+from models.conta_banco import Conta_Banco
+
 import re
 
 
-cur = con.cursor()
 
-for row in cur.execute('''SELECT * FROM stocks'''):
-    print(row)
+df_contas_banco = Conta_Banco.get_contas()
+print(df_contas_banco)
 
-cur.close()
+
+
+
+

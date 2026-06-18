@@ -15,18 +15,26 @@ class Conta_Banco():
             #Capturando o nome das colunas
             columns = [col[0] for col in result.description]
             #Capturando os dados
-            return pd.DataFrame.from_records(result.fetchall(), columns=columns)
+            return pd.DataFrame.from_records(result.fetchall(), columns=columns) # ANALIZAR RECURSO DO PANDAS
             
       
     def salva_conta(self):
-        print('Salvando a conta....', self.conta, self.conta_contabil) 
-        with connection:
-            cur = connection.cursor()
-            cur.execute("INSERT INTO conta_banco" \
-            "(conta, conta_contabil) VALUES (?, ?)",
-            (self.conta, self.conta_contabil)
-            )
-            connection.commit()
+        print('Salvando a conta....', self.conta, self.conta_contabil)
+        cur = None
+        try:
+            with connection:
+                    cur = connection.cursor()
+                    cur.execute("INSERT INTO conta_banco" \
+                    "(conta, conta_contabil) VALUES (?, ?)",
+                    (self.conta, self.conta_contabil)
+                    )
+                    connection.commit()
+        except Exception as e:
+            print(f"Erro na tranzação: {e}")
+            raise e
+        finally:
+            if cur:
+                cur.close()
 
 
     

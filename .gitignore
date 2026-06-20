@@ -23,5 +23,5 @@ venv/
 db.sqlite3
 
 # Dados 
-dw
+.dw
 .justfile

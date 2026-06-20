@@ -1,0 +1,33 @@
+-- database: ./dw/gold/contas.db
+
+
+-- Utilização durante faze de desenvolvimento e teste
+
+
+SELECT * FROM stg_conta_contabil;
+
+
+DELETE FROM conta_contabil;
+
+-- zerar o id
+UPDATE sqlite_sequence SET seq = 0 WHERE name = 'conta_contabil';
+
+
+CREATE TABLE conta_banco (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    conta INTEGER NOT NULL,
+    conta_contabil INTEGER NOT NULL
+);
+
+
+CREATE TABLE conta_descricao (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    c_id INTEGER UNIQUE,
+    id_banco INTEGER NOT NULL,
+    descricao VARCHAR(255) NOT NULL,
+    conta_descricao INTEGER NOT NULL,
+    FOREIGN KEY (id_banco) REFERENCES conta_banco(id)
+);
+
+DROP TABLE conta_banco;
+

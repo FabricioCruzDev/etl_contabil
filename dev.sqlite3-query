@@ -7,10 +7,10 @@
 SELECT * FROM stg_conta_contabil;
 
 
-DELETE FROM conta_contabil;
+DELETE FROM conta_banco;
 
 -- zerar o id
-UPDATE sqlite_sequence SET seq = 0 WHERE name = 'conta_contabil';
+UPDATE sqlite_sequence SET seq = 0 WHERE name = 'conta_banco';
 
 
 CREATE TABLE conta_banco (

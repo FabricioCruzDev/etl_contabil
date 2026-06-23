@@ -42,12 +42,12 @@ def update_conta_banco(df : pd.DataFrame):
 
     print('Tabela conta_banco aualizada com sucesso')
 
-def consulta_bancos():
-    query = text("SELECT * FROM conta_banco")
+# def consulta_bancos():
+#     query = text("SELECT * FROM conta_banco")
     
-    df_resultado = pd.read_sql_query(query, con=engine)
+#     df_resultado = pd.read_sql_query(query, con=engine)
     
-    return df_resultado
+#     return df_resultado
 
 
     
